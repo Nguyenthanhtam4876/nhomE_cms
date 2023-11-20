@@ -54,7 +54,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-:root {
+ :root {
   --primary-color: #2ace5e;
   --primary-color-rgb: 42, 206, 94;
   --primary-color-dark: #36b25ded;
@@ -1120,8 +1120,8 @@ body.custom-background .site {
 
 a.btn {
   display: inline-block;
-  background: #2ace5e;
-  border: 1px solid #2ace5e;
+  background: #cecb2a;
+  border: 1px solid  #cecb2a;
   color: #fff;
   font-weight: 700;
 
@@ -2172,13 +2172,13 @@ body.home:not(.banner-enabled) .site-header {
 }
 
 .site-branding .site-title a {
-  color: #2ace5e;
+  color: #000000;
 }
 
 .site-branding .site-description {
   margin: 0;
   font-size: 0.778em;
-  color: #6a6a6a;
+  color: #000000;
   font-weight: 400;
 }
 
@@ -2209,6 +2209,8 @@ body.home:not(.banner-enabled) .site-header {
 }
 
 .main-navigation ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
   display: inline-block;
   vertical-align: middle;
   padding: 17px;
@@ -2220,7 +2222,22 @@ body.home:not(.banner-enabled) .site-header {
 .main-navigation ul li.current_page_item>a,
 .main-navigation ul li.current-menu-ancestor>a,
 .main-navigation ul li.current_page_ancestor>a {
-  color: #2ace5e;
+  color: #000000;
+
+  position: relative; /* Làm cho ph?n t? van b?n có th? d?nh v? */
+
+  &::after { /* T?o m?t ph?n t? gi? cho g?ch du?i */
+    content: "";
+    position: absolute;
+    bottom: 4px; /* Ð?t v? trí g?ch du?i hoi bên du?i van b?n */
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff8c00;
+  }
+
+
+ 
 }
 
 .main-navigation ul li ul {
