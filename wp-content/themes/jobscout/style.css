@@ -54,7 +54,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-:root {
+ :root {
   --primary-color: #2ace5e;
   --primary-color-rgb: 42, 206, 94;
   --primary-color-dark: #36b25ded;
@@ -1279,12 +1279,30 @@ form.search-form input.search-submit:focus {
   color: #fff;
   margin-bottom: 30px;
 }
-
-.widget ul {
+.editFooter-t .widget  ul  {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  align-content: stretch;
+
 }
+
+  .widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: nowrap;
+
+  }
 
 .widget-area .widget ul ul,
 .site-footer .widget ul ul {
@@ -1325,10 +1343,12 @@ form.search-form input.search-submit:focus {
 .site-footer .widget ul li,
 .site-footer .widget ul li a,
 .site-footer .widget ol li a {
-  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  color: black;
 }
 
 .site-footer .widget ul li {
+  padding-right: 20px;
   overflow: visible;
 }
 
