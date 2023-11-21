@@ -561,12 +561,12 @@ function jobscout_footer_top(){
                                     <div class="contact-input" style="padding-top: 25px;">
                                         <p>
                                             <span class="icon" style="
-                                       background-color: white;
+                                         background-color: white;
                                         border: solid 1px white;
                                         padding-left: 12;
-                                        padding-top: 13;
+                                        padding-top: 12;
                                         top: 48;
-                                        padding-bottom: 14;
+                                        padding-bottom: 11;
                                     ">
                                                 <svg xmlns="http://www.w3.org/2000/svg" height="20px"
                                                     viewBox="0 0 512 512">
@@ -596,16 +596,16 @@ function jobscout_footer_top(){
                                             </span>
                                             <input class="wpcf7-form-control wpcf7-submit has-spinner contact-sub"
                                                 type="submit" value="SUBCRIBE" style="
-                                                border: solid 1px white;
-                                                border-radius: 0;
-                                                margin-left: 10;
-                                                color: white;
-                                                font-size: 20;
-                                                background: #ff6200;
-                                                padding-left: 23px;
-                                                padding-top: 6.5px;
-                                                padding-right: 23px;
-                                                padding-bottom: 11.6px;
+                                                    border: solid 1px white;
+                                                    border-radius: 0;
+                                                    margin-left: 10;
+                                                    color: white;
+                                                    font-size: 20;
+                                                    background: #ff6200;
+                                                    padding-left: 23px;
+                                                    padding-top: 9px;
+                                                    padding-right: 23px;
+                                                    padding-bottom: 10px;
                                         " />
 
                                         </p>
