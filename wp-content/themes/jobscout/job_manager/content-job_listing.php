@@ -58,9 +58,17 @@ $excerpt = get_the_excerpt();
 				}
 				do_action( 'job_listing_meta_end' ); 
 			?> -->
-			<div class="company-category">
-				Full time
-			</div>
+			<?php 
+				if ( get_option( 'job_manager_enable_types' ) ) { 
+					$types = wpjm_get_the_job_types(); 
+					if ( ! empty( $types ) ) : foreach ( $types as $jobtype ) : ?>
+						<div class="company-category">
+						<?php echo esc_html( $jobtype->name ); ?>
+						</div>
+					<?php endforeach; endif; 
+				}
+				do_action( 'job_listing_meta_end' ); 
+			?>
 			<div class="company-name">
 				<?= the_company_name() ?>
 			</div>
@@ -71,6 +79,15 @@ $excerpt = get_the_excerpt();
 		</div>		
 	</div>
 	<div class="post_excerpt">
+		<?php 
+				do_action( 'job_listing_meta_start' ); 
+
+				if( $job_salary ){
+                    echo '<div class="salary-amt">
+                        <span class="salary">'. esc_html( $job_salary ) .'</span>
+                    </div>';
+                }
+			?>
 			<?= $excerpt ?>
 	</div>
 
