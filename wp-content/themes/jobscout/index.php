@@ -12,52 +12,65 @@
  * @package JobScout
  */
 
-get_header(); ?>
+ get_header(); ?>
 
-	<div id="primary" class="content-area">
-		
-        <?php 
-        /**
-         * Before Posts hook
-        */
-        do_action( 'jobscout_before_posts_content' );
-        ?>
-        
-        <main id="main" class="site-main">
 
-		<?php
-		if ( have_posts() ) :
+ 
+ <?php
+ $blog_heading = get_theme_mod( 'blog_section_title', __( 'Latest Articles', 'jobscout' ) );
+ ?>
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+  <div id="primary" class="content-area">
+	  
+	  <?php 
+	  /**
+	   * Before Posts hook
+	  */
+	  do_action( 'jobscout_before_posts_content' );
+	  ?>
+	<div class="image-container">
+    <img src="../wp-content/themes/jobscout/images/banner_new.jpg" alt=""class="image-style">
+    <div class="text-overlay">FDS NEWS</div>
+  	</div>
+	 
+	
+	  <main id="main" class="site-main index-main">
+	  <?php 
+			 if( $blog_heading ) echo '<h2 class="section-title index-title">' . esc_html( $blog_heading ) . '</h2>';
+		 ?>
+	  <div class="row">
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-        
-        <?php
-        /**
-         * After Posts hook
-         * @hooked jobscout_navigation - 15
-        */
-        do_action( 'jobscout_after_posts_content' );
-        ?>
-        
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+	  <?php
+	  if ( have_posts() ) :
+		  while ( have_posts() ) : the_post();?>
+ 
+		  <div class="col-md-6 blog-format">
+			
+			   
+			   <?php
+			  get_template_part( 'template-parts/content', get_post_format() );
+			  ?>
+			  </div>
+			  <?php
+			 endwhile;
+	  else :
+ 
+		  get_template_part( 'template-parts/content', 'none' );
+ 
+	  endif; ?>
+ </div>
+	  </main><!-- #main -->
+	  
+	  <?php
+	  /**
+	   * After Posts hook
+	   * @hooked jobscout_navigation - 15
+	  */
+	  do_action( 'jobscout_after_posts_content' );
+	  ?>
+	  
+  </div><!-- #primary -->
+ 
+ <?php
+//  get_sidebar();
+ get_footer();
