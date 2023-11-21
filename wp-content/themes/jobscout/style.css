@@ -1200,6 +1200,7 @@ figure.post-thumbnail {
 }
 
 .entry-meta>span a {
+  text-decoration: none;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -5608,7 +5609,7 @@ JOB LISTING PAGE
   line-height: 1.45em;
 }
 
-.site-main .entry-content div.job_listings div.job_listings article .entry-title a {
+.entry-title a {
   text-decoration: none;
 }
 
