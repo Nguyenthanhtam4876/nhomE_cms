@@ -81,7 +81,7 @@ $excerpt = get_the_excerpt();
 			
 		</div>		
 	</div>
-	<div class="post_excerpt">
+	<div class="post_excerpt" style="margin-top: 10px;">
 		<?php 
 				do_action( 'job_listing_meta_start' ); 
 

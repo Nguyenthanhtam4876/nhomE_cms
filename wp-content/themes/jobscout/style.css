@@ -2646,7 +2646,7 @@ section.top-job-section .section-title {
 .top-job-section .row div.job_listings article .entry-meta > *{
   padding: 5px;
   margin: 0;
-  border-right: gray 1px solid;
+  border-right: lightgray 1px solid;
 }
 .top-job-section .row div.job_listings article .entry-meta .company-address {
   border: none;
