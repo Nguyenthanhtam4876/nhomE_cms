@@ -30,27 +30,28 @@ if ( $ed_jobposting && jobscout_is_wp_job_manager_activated() && $job_title  ) {
 ?>
 
 <style>
-    .entry-meta{
+    .top-job-section .entry-meta{
         display: flex;
         align-items:center;
         background: var(--font-gray);
         border-radius: 25px;
         font-size: 16px !important;
         padding-top:0 !important;
+        background: var(--little-gray);
     }
-    .entry-meta > *{
+    .top-job-section .entry-meta > *{
         text-align: center;
         padding: 5px 15px;
         margin: 0 !important;
         border-right: 1px lightgray solid;
     }
-    .job-type{
+    .top-job-section .job-type{
         text-transform: lowercase;
     }
-    .company-address{
+    .top-job-section .company-address{
         border:none;
     }
-    .date-time{
+    .top-job-section .date-time{
         color: lightgray;
     }
 </style>

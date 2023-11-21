@@ -64,7 +64,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --white-color: #fff;
   --white-color-rgb: 255, 255, 255;
   --primary-font: "Nunito Sans", sans-serif;
-  --font-gray:#F2F2F2;
+  --little-gray:#F2F2F2;
 }
 
 html {
@@ -1372,20 +1372,11 @@ form.search-form input.search-submit:focus {
 }
 
 .page-template-default figure.post-thumbnail {
-  width: 100%;
-  height: 100%;
+  margin-bottom: 30px;
 }
 
 .page-template-default figure.post-thumbnail a.post-thumbnail {
-  display: block;
   outline-offset: 2px;
-  height: 100%;
-  width: auto;
-  padding: 15px;
-}
-
-.page-template-default figure.post-thumbnail a.post-thumbnail > * {
-  height: 100%;
 }
 
 /*=========================
@@ -2693,11 +2684,16 @@ section.top-job-section .section-title {
 .job-types li.job-type,
 .job_listing li.job-type {
   list-style: none;
-  font-size: 16px;
-  text-transform: lowercase;
+  font-size: 0.7778em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
   display: inline-block;
-  margin-bottom: 5px;
-  color: #000;
+  border: 1px solid #2ace5e;
+  border-radius: 40px;
+  padding: 5px 20px;
+  color: #2ace5e;
+  margin-top: 10px;
   cursor: default;
 }
 
@@ -2923,7 +2919,7 @@ section.article-section {
 
 .article-section .article-wrap {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
   text-align: left;
   margin-top: 50px;
