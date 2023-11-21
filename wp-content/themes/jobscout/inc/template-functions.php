@@ -604,7 +604,7 @@ function jobscout_footer_top(){
                                         padding-left: 23px;
                                         padding-top: 7.6px;
                                         padding-right: 23px;
-                                        padding-bottom: 11.1px;
+                                        padding-bottom: 10px;
                                         " />
 
                                         </p>
