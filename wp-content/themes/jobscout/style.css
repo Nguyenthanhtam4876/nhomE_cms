@@ -2573,7 +2573,7 @@ section.top-job-section .section-title {
   width: 48%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-right: 2.5%;
+  margin-right: 2%;
   margin-bottom: 3%;
   border-radius: 5px;
   padding: 30px;
@@ -2628,22 +2628,28 @@ section.top-job-section .section-title {
 }
 
 .top-job-section .row div.job_listings article .company-name {
-  font-size: 0.8888em;
-  color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
   line-height: 1.44em;
   margin-top: 5px;
 }
 
-.top-job-section .row div.job_listings article .company-name::before {
-  content: "@";
-}
-
 .top-job-section .row div.job_listings article .entry-meta {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 15px;
-  padding-top: 15px;
   font-size: 1em;
+  display: flex;
+  background: var(--little-gray);
+  border-radius: 25px;
+  text-align: center;
+  align-items: center;
+}
+.top-job-section .row div.job_listings article .entry-meta > *{
+  padding: 5px;
+  margin: 0;
+  border-right: gray 1px solid;
+}
+.top-job-section .row div.job_listings article .entry-meta .company-address {
+  border: none;
 }
 
 .top-job-section .row div.job_listings article .salary-amt,
@@ -5572,6 +5578,7 @@ PAGE TEMPLATE LOGIN REGISTER
 JOB LISTING PAGE
 ==========================*/
 .site-main .entry-content div.job_listings div.job_listings article {
+  width: 48%;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
   margin-bottom: 25px;

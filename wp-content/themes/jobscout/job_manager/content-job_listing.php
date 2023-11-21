@@ -24,7 +24,7 @@ $date = get_the_date();
 $excerpt = get_the_excerpt();
 
 ?>
-<article <?php job_listing_class(); ?> data-longitude="<?php echo esc_attr( $post->geolocation_lat ); ?>" data-latitude="<?php echo esc_attr( $post->geolocation_long ); ?>">
+<article class="taptamvong" <?php job_listing_class(); ?> data-longitude="<?php echo esc_attr( $post->geolocation_lat ); ?>" data-latitude="<?php echo esc_attr( $post->geolocation_long ); ?>">
 
 	<figure class="company-logo">
 		<?php the_company_logo( 'thumbnail' ); ?>
