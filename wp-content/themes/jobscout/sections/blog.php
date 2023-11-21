@@ -5,13 +5,14 @@
  * @package JobScout
  */
 
-$blog_heading = get_theme_mod( 'blog_section_title', __( 'NEWEST BLOG ENTRIES', 'jobscout' ) );
+$blog_heading = get_theme_mod( 'blog_section_title', __( 'Latest Articles', 'jobscout' ) );
 $sub_title    = get_theme_mod( 'blog_section_subtitle', __( 'We will help you find it. We are your first step to becoming everything you want to be.', 'jobscout' ) );
 $blog         = get_option( 'page_for_posts' );
 $label        = get_theme_mod( 'blog_view_all', __( 'See More Posts', 'jobscout' ) );
 $hide_author  = get_theme_mod( 'ed_post_author', false );
 $hide_date    = get_theme_mod( 'ed_post_date', false );
 $ed_blog      = get_theme_mod( 'ed_blog', true );
+
 $args = array(
     'post_type'           => 'post',
     'post_status'         => 'publish',
@@ -26,8 +27,9 @@ if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
 	<div class="container">
         <?php 
             if( $blog_heading ) echo '<h2 class="section-title">' . esc_html( $blog_heading ) . '</h2>';
+            if( $sub_title ) echo '<div class="section-desc">' . wpautop( wp_kses_post( $sub_title ) ) . '</div>'; 
         ?>
-        <div class="row">
+        
         <?php if( $qry->have_posts() ){ ?>
            <div class="article-wrap">
     			<?php 
@@ -46,15 +48,15 @@ if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
                             </a>
                         </figure>
                         <header class="entry-header">
+                            <div class="entry-meta">
+                                <?php 
+                                    if( ! $hide_author ) jobscout_posted_by(); 
+                                    if( ! $hide_date ) jobscout_posted_on();
+                                ?> 
+                            </div>
                             <h3 class="entry-title">
                                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                             </h3>
-                        <div class="entry-excerpt">
-                            <?= the_excerpt() ?>
-                        </div>
-                        <div class="readmore">
-                            <a href="<?php the_permalink(); ?>" class="post-thumbnail"> Read More </a>
-                        </div>
                         </header>
         			</article>			
         			<?php 
@@ -70,20 +72,7 @@ if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
             <?php } ?>
         
         <?php } ?>
-        </div>
 	</div>
 </section>
 <?php 
 }
-?>
-<style>
-    .post{
-        display: flex;
-    }
-    .entry-header{
-        margin: 10px !important;
-    }
-    .entry-header .readmore a{
-        color: orange;
-    }
-</style>
