@@ -549,19 +549,30 @@ function jobscout_footer_top(){
                                 <div class="col-md-2">
                                     <p>
                                     <h4 style="    
-                                    margin-left: 70;
-                                text-align: left;
-                                color: white;">
+                                           margin-top: 10%;
+                                            margin-left: 23%;
+                                            text-align: left;
+                                            color: white;">
                                         Subscribe To <br>
                                         Out Newsletter
                                     </h4>
                                     </p>
                                 </div>
                                 <div class="col-md-6" style=" text-align: start;">
-                                    <div class="contact-input" style="padding-top: 25px;">
+                                    <div class="contact-input" style="padding-top: 25px; position: relative;">
                                         <p>
+                                            <ul style="
+                                                top: 25;
+                                                position: absolute;
+                                                display: flex;
+                                            ">
+                                                <li style="
+                                                    height: 50;
+                                                    background: white;
+                                                ">
+                                                
                                             <span class="icon" style="
-                                         background-color: white;
+                                        
                                         border: solid 1px white;
                                         padding-left: 12;
                                         padding-top: 12;
@@ -594,7 +605,9 @@ function jobscout_footer_top(){
                         
                                                 " />
                                             </span>
-                                            <input class="wpcf7-form-control wpcf7-submit has-spinner contact-sub"
+                                                </li>
+                                                <li>
+                                                <input class="wpcf7-form-control wpcf7-submit has-spinner contact-sub"
                                                 type="submit" value="SUBCRIBE" style="
                                                     border: solid 1px white;
                                                     border-radius: 0;
@@ -607,6 +620,9 @@ function jobscout_footer_top(){
                                                     padding-right: 23px;
                                                     padding-bottom: 10px;
                                         " />
+                                                </li>
+                                            </ul>
+                                         
 
                                         </p>
                                         <div class="wpcf7-response-output" aria-hidden="true"></div>
