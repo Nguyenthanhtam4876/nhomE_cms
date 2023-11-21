@@ -549,7 +549,7 @@ function jobscout_footer_top(){
                                 <div class="col-md-2">
                                     <p>
                                     <h4 style="    
-                                margin-left: 25;
+                                    margin-left: 70;
                                 text-align: left;
                                 color: white;">
                                         Subscribe To <br>
