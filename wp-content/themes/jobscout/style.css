@@ -5578,7 +5578,6 @@ PAGE TEMPLATE LOGIN REGISTER
 JOB LISTING PAGE
 ==========================*/
 .site-main .entry-content div.job_listings div.job_listings article {
-  width: 48%;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.16);
   margin-bottom: 25px;
@@ -5610,27 +5609,38 @@ JOB LISTING PAGE
   line-height: 1.45em;
 }
 
+.site-main .entry-content div.job_listings div.job_listings article .entry-title a {
+  text-decoration: none;
+}
+
 .site-main .entry-content div.job_listings div.job_listings article .company-name {
-  font-size: 0.8888em;
-  color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
   line-height: 1.44em;
   margin-top: 5px;
 }
 
-.site-main .entry-content div.job_listings div.job_listings article .company-name:before {
-  content: "@";
-}
-
 .site-main .entry-content div.job_listings div.job_listings article .entry-meta {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 15px;
-  padding-top: 15px;
+  border-radius: 25px;
+  background: var(--little-gray);
+  text-align: center;
+  padding: 5px;
   font-size: 1em;
   display: flex;
   flex: 1;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
+}
+.site-main .entry-content div.job_listings div.job_listings article .entry-meta > *{
+  width: 30%;
+  padding: 5px;
+  border-right: #000 1px solid;
+  margin: 0 !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.site-main .entry-content div.job_listings div.job_listings article .entry-meta .company-address{
+  border: none;
 }
 
 .site-main .entry-content div.job_listings div.job_listings article .entry-meta .salary-amt,
