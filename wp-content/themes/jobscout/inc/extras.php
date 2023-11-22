@@ -212,21 +212,7 @@ if( ! function_exists( 'jobscout_secondary_navigation' ) ) :
  * Secondary Navigation
 */
 function jobscout_secondary_navigation(){ ?>
-    <div class="header-t">
-        <div class="container">
-            <div class="left-block">
-	            <nav class="secondary-nav">
-            		<?php
-            			wp_nav_menu( array(
-            				'theme_location' => 'secondary',
-                            'menu_class'     => 'nav-menu',
-            				'menu_id'        => 'secondary-menu',
-                            'fallback_cb'    => 'jobscout_secondary_menu_fallback',
-            			) );
-            		?>
-	            </nav>
-            </div>
-        </div>
+   
     </div><!-- .header-t -->
     <?php
 }
