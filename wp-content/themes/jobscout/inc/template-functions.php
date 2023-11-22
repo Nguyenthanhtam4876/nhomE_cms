@@ -558,13 +558,13 @@ function jobscout_footer_top(){
                                     </h4>
                                     </p>
                                 </div>
-                                <div class="col-md-6" style=" text-align: start;">
+                                <div class="col-md-7" style=" text-align: start;">
                                     <div class="contact-input" style="padding-top: 25px; position: relative;">
                                         <p>
                                             <ul style="
-                                                top: 25;
-                                                position: absolute;
-                                                display: flex;
+                                                    top: 25;
+                                                    position: absolute;
+                                                    display: -webkit-box;
                                             ">
                                                 <li style="
                                                         height: 50;
