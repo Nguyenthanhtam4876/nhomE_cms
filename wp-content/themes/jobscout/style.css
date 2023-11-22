@@ -771,7 +771,7 @@ textarea {
 --------------------------------------------------------------*/
 a {
   color: #2ace5e;
-  text-decoration: none;
+  text-decoration: none !important;
   -webkit-transition: all ease 0.35s;
   -moz-transition: all ease 0.35s;
   transition: all ease 0.35s;
@@ -940,7 +940,7 @@ a:hover {
 }
 
 .hentry {
-  margin: 0 0 1.5em;
+  margin: 0 0 0em;
 }
 
 .updated:not(.published) {
@@ -1281,12 +1281,30 @@ form.search-form input.search-submit:focus {
   color: #fff;
   margin-bottom: 30px;
 }
-
-.widget ul {
+.editFooter-t .widget  ul  {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: nowrap;
+  align-content: stretch;
+
 }
+
+  .widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: nowrap;
+
+  }
 
 .widget-area .widget ul ul,
 .site-footer .widget ul ul {
@@ -1327,10 +1345,12 @@ form.search-form input.search-submit:focus {
 .site-footer .widget ul li,
 .site-footer .widget ul li a,
 .site-footer .widget ol li a {
-  color: rgba(255, 255, 255, 0.8);
+  font-weight: bold;
+  color: black;
 }
 
 .site-footer .widget ul li {
+  padding-right: 20px;
   overflow: visible;
 }
 
@@ -1853,7 +1873,6 @@ SIDEBARS
 =========================*/
 .site-content {
   margin-top: 50px;
-  margin-bottom: 50px;
 }
 
 .rightsidebar #primary {
@@ -2340,7 +2359,7 @@ SITE BANNER SECTION
 }
 
 .banner-caption .title {
-  margin: 0;
+  margin-left: -200px;
   font-size: 2.5em;
   color: #fff;
   font-weight: 800;
@@ -2375,9 +2394,6 @@ SITE BANNER SECTION
 .banner-caption .jobscout_job_filters .search_jobs {
   padding: 0;
   display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -2391,6 +2407,7 @@ SITE BANNER SECTION
   display: flex;
   flex: 1;
   padding-left: 0;
+  
 }
 
 .banner-caption .jobscout_job_filters .search_jobs div.filter_wide,
@@ -2438,6 +2455,8 @@ SITE BANNER SECTION
 }
 
 .banner-caption .jobscout_job_filters .search_jobs>div:first-child input {
+  width: 400px;
+  margin-right: 10px;
   border-left: none;
 }
 
