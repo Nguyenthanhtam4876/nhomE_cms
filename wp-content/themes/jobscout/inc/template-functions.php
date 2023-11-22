@@ -539,10 +539,10 @@ function jobscout_footer_top(){
                                 <div class="col-md-2">
                                     <p>
                                     <h4 style="    
-                                           margin-top: 10%;
-                                            margin-left: 23%;
-                                            text-align: left;
-                                            color: white;">
+                                              margin-top: 10%;
+                                                margin-left: 10%;
+                                                text-align: left;
+                                                color: white;">
                                         Subscribe To <br>
                                         Out Newsletter
                                     </h4>
@@ -557,8 +557,9 @@ function jobscout_footer_top(){
                                                 display: flex;
                                             ">
                                                 <li style="
-                                                    height: 50;
-                                                    background: white;
+                                                        height: 50;
+                                                        display: flex;
+                                                        background: white;
                                                 ">
                                                 
                                             <span class="icon" style="
