@@ -1873,6 +1873,8 @@ SIDEBARS
 =========================*/
 .site-content {
   margin-top: 50px;
+  margin-left: -12px;
+  margin-right: -12px;
 }
 
 .rightsidebar #primary {
@@ -3152,6 +3154,7 @@ SITE FOOTER SECTION
 }
 
 .footer-b {
+  margin-bottom: -60px;
   background: #212121;
   padding: 15px 0;
   font-size: 0.888em;

@@ -208,11 +208,7 @@ function jobscout_content_start(){
                 }
             } 
         ?>
-<<<<<<< HEAD
-    <div class="container">
-=======
         <div class="container-fluid">
->>>>>>> Lam
         <?php 
     }
 }
@@ -614,7 +610,7 @@ function jobscout_footer_top(){
         <div class="footer-b" style="background-color: #F2F2F2; ">
     		<div class="container">
             <h3>
-            <a href=" <?php echo esc_url( home_url( '/' ) ) ?> " style="color:black;  display: flex;justify-content: center; padding-bottom:10px"> <?php  echo esc_html( get_bloginfo( 'name' ) ) ?>  </a></h3>
+            <a href=" <?php echo esc_url( home_url( '/' ) ) ?> " style="color:black; padding-top:30px; display: flex;justify-content: center; padding-bottom:10px"> <?php  echo esc_html( get_bloginfo( 'name' ) ) ?>  </a></h3>
     			<div class="grid column-<?php echo esc_attr( $sidebar_count ); ?>">
                 <?php foreach( $active_sidebars as $active ){ ?>
                     <div class="col editFooter-t">
