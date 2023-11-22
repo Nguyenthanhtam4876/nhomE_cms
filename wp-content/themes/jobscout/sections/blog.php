@@ -32,7 +32,7 @@ $args = array(
     'ignore_sticky_posts' => true
 );
 ?>
-     <div class="container fluid">
+     <div class="container">
     <div class="row" style="
         display: flex;
     justify-content: center;
@@ -53,10 +53,10 @@ if ($latest_posts->have_posts()) :
    
 
         <div class="col-md-6" style="
-                background: aliceblue;
-               margin: 30px;
-                width: 515;
-                height: 250;
+                  background: aliceblue;
+                    margin: 20px;
+                    width: 515;
+                    height: 250;
         ">
             <a href="<?php the_permalink(); ?>?>"
             style="text-decoration: none; color: black;"
