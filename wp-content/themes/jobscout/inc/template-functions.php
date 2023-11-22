@@ -1,3 +1,8 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+</script>
 <?php
 /**
  * JobScout Template Functions which enhance the theme by hooking into WordPress
@@ -10,9 +15,9 @@ if( ! function_exists( 'jobscout_doctype' ) ) :
  * Doctype Declaration
 */
 function jobscout_doctype(){ ?>
-    <!DOCTYPE html>
-    <html <?php language_attributes(); ?>>
-    <?php
+<!DOCTYPE html>
+<html <?php language_attributes(); ?>>
+<?php
 }
 endif;
 add_action( 'jobscout_doctype', 'jobscout_doctype' );
@@ -22,10 +27,10 @@ if( ! function_exists( 'jobscout_head' ) ) :
  * Before wp_head 
 */
 function jobscout_head(){ ?>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="profile" href="http://gmpg.org/xfn/11">
-    <?php
+<meta charset="<?php bloginfo( 'charset' ); ?>">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<?php
 }
 endif;
 add_action( 'jobscout_before_wp_head', 'jobscout_head' );
@@ -38,17 +43,19 @@ function jobscout_responsive_header(){
     $post_job_label  = get_theme_mod( 'post_job_label', __( 'Post Jobs', 'jobscout' ) );
     $post_job_url    = get_theme_mod( 'post_job_url', '#' );
     ?>
-    <div class="responsive-nav">
-        <div class="nav-top">
-            <?php jobscout_site_branding( true ); ?>
-        </div>
+<div class="responsive-nav">
+    <div class="nav-top">
+        <?php jobscout_site_branding( true ); ?>
+    </div>
 
 
-        <nav id="mobile-site-navigation" class="main-navigation mobile-navigation">        
-            <div class="primary-menu-list main-menu-modal cover-modal" data-modal-target-string=".main-menu-modal">
-                <button class="close close-main-nav-toggle" data-toggle-target=".main-menu-modal" data-toggle-body-class="showing-main-menu-modal" aria-expanded="false" data-set-focus=".main-menu-modal"></button>
-                <div class="mobile-menu" aria-label="<?php esc_attr_e( 'Mobile', 'jobscout' ); ?>">
-                    <?php
+    <nav id="mobile-site-navigation" class="main-navigation mobile-navigation">
+        <div class="primary-menu-list main-menu-modal cover-modal" data-modal-target-string=".main-menu-modal">
+            <button class="close close-main-nav-toggle" data-toggle-target=".main-menu-modal"
+                data-toggle-body-class="showing-main-menu-modal" aria-expanded="false"
+                data-set-focus=".main-menu-modal"></button>
+            <div class="mobile-menu" aria-label="<?php esc_attr_e( 'Mobile', 'jobscout' ); ?>">
+                <?php
                         wp_nav_menu( array(
                             'theme_location' => 'primary',
                             'menu_id'        => 'mobile-primary-menu',
@@ -65,17 +72,18 @@ function jobscout_responsive_header(){
                             'fallback_cb'    => 'jobscout_secondary_menu_fallback',
                         ) );
                     ?>
-                
-                    <?php if( $post_job_label || $post_job_url ){ ?>
-                        <div class="btn-wrap">
-                            <a class="btn" href="<?php echo esc_url( $post_job_url ) ?>"><?php echo esc_html( $post_job_label ) ?></a>
-                        </div>
-                    <?php } ?>
-               </div>
+
+                <?php if( $post_job_label || $post_job_url ){ ?>
+                <div class="btn-wrap">
+                    <a class="btn"
+                        href="<?php echo esc_url( $post_job_url ) ?>"><?php echo esc_html( $post_job_label ) ?></a>
+                </div>
+                <?php } ?>
             </div>
-        </nav><!-- #mobile-site-navigation -->
-    </div> <!-- .responsive-nav -->
-    <?php
+        </div>
+    </nav><!-- #mobile-site-navigation -->
+</div> <!-- .responsive-nav -->
+<?php
 }
 endif;
 add_action( 'jobscout_before_header', 'jobscout_responsive_header', 15 );
@@ -85,8 +93,9 @@ if( ! function_exists( 'jobscout_page_start' ) ) :
  * Page Start
 */
 function jobscout_page_start(){ ?>
-    <div id="page" class="site">
-        <a class="skip-link screen-reader-text" href="#acc-content"><?php esc_html_e( 'Skip to content (Press Enter)', 'jobscout' ); ?></a>
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text"
+        href="#acc-content"><?php esc_html_e( 'Skip to content (Press Enter)', 'jobscout' ); ?></a>
     <?php
 }
 endif;
@@ -124,12 +133,12 @@ if( ! function_exists( 'jobscout_breadcrumbs_bar' ) ) :
         $ed_breadcrumbs = get_theme_mod( 'ed_breadcrumbs', false );
 
         if( $ed_breadcrumbs && ! is_front_page() && ! is_404() ){ ?>
-            <section class="breadcrumb-wrap">
-                <div class="container">
-                    <?php jobscout_breadcrumbs_cb(); //Breadcrumb ?>
-                </div>
-            </section>   
-            <?php 
+    <section class="breadcrumb-wrap">
+        <div class="container">
+            <?php jobscout_breadcrumbs_cb(); //Breadcrumb ?>
+        </div>
+    </section>
+    <?php 
         }    
     }
 endif;
@@ -147,21 +156,21 @@ function jobscout_content_start(){
         echo is_404() ? '<div class="error-holder">' : '<div id="content" class="site-content">'; 
 
         if( is_archive() || is_search() || is_page_template( 'templates/portfolio.php' ) ) : ?>
-            <header class="page-header">
-                <?php
+    <header class="page-header">
+        <?php
                     if( is_archive() ){ 
                         if( is_author() ) { 
                             $author_title = get_the_author(); ?>
-                            <div class="author-bio">
-                                <figure class="author-img"><?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?></figure>
-                                <div class="author-content">
-                                    <?php 
+        <div class="author-bio">
+            <figure class="author-img"><?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?></figure>
+            <div class="author-content">
+                <?php 
                                         echo '<span class="sub-title">' . esc_html__( 'All Posts by', 'jobscout' ) . '</span>';
                                         if( $author_title ) echo '<h1 class="author-title">' . esc_html( $author_title ) . '</h3>';
-                                    ?>      
-                                </div>
-                            </div>
-                        <?php }else{
+                                    ?>
+            </div>
+        </div>
+        <?php }else{
                             the_archive_title( '<h1 class="page-title">', '</h1>' );
                             the_archive_description( '<div class="archive-description">', '</div>' );             
                         }
@@ -186,8 +195,8 @@ function jobscout_content_start(){
                         echo '</div><!-- .container -->';
                     }
                 ?>
-            </header>
-        <?php endif; 
+    </header>
+    <?php endif; 
             if( is_singular( 'job_listing' ) ){
                 global $post;
                 $banner_image   = get_header_image();
@@ -199,7 +208,7 @@ function jobscout_content_start(){
                 }
             } 
         ?>
-        <div class="container">
+    <div class="container">
         <?php 
     }
 }
@@ -254,8 +263,8 @@ if( ! function_exists( 'jobscout_entry_header' ) ) :
  * Entry Header
 */
 function jobscout_entry_header(){ ?>
-    <header class="entry-header">
-        <?php 
+        <header class="entry-header">
+            <?php 
             $ed_cat_single = get_theme_mod( 'ed_category', false );
             $hide_author   = get_theme_mod( 'ed_post_author', false );
             $hide_date     = get_theme_mod( 'ed_post_date', false );
@@ -277,8 +286,8 @@ function jobscout_entry_header(){ ?>
                 the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
             endif;        
         ?>
-    </header>         
-    <?php    
+        </header>
+        <?php    
 }
 endif;
 add_action( 'jobscout_post_entry_content', 'jobscout_entry_header', 10 );
@@ -291,8 +300,8 @@ if( ! function_exists( 'jobscout_entry_content' ) ) :
 */
 function jobscout_entry_content(){ 
     $ed_excerpt = get_theme_mod( 'ed_excerpt', true ); ?>
-    <div class="entry-content" itemprop="text">
-		<?php
+        <div class="entry-content" itemprop="text">
+            <?php
 			if( is_singular() || ! $ed_excerpt || ( get_post_format() != false ) ){
                 the_content();    
     			wp_link_pages( array(
@@ -303,8 +312,8 @@ function jobscout_entry_content(){
                 the_excerpt();
             }
 		?>
-	</div><!-- .entry-content -->
-    <?php
+        </div><!-- .entry-content -->
+        <?php
 }
 endif;
 add_action( 'jobscout_post_entry_content', 'jobscout_entry_content', 15 );
@@ -320,8 +329,8 @@ if( ! function_exists( 'jobscout_entry_footer' ) ) :
 function jobscout_entry_footer(){ 
     $readmore = get_theme_mod( 'read_more_text', __( 'Read More', 'jobscout' ) );
     $ed_post_date   = get_theme_mod( 'ed_post_date', false ); ?>
-	<footer class="entry-footer">
-		<?php
+        <footer class="entry-footer">
+            <?php
 			if( is_single() ){
 			    jobscout_tag();
 			}
@@ -356,8 +365,8 @@ function jobscout_entry_footer(){
             }
             if( is_single() ) echo '</div>';
 		?>
-	</footer><!-- .entry-footer -->
-	<?php 
+        </footer><!-- .entry-footer -->
+        <?php 
 }
 endif;
 add_action( 'jobscout_post_entry_content', 'jobscout_entry_footer', 20 );
@@ -370,20 +379,21 @@ if( ! function_exists( 'jobscout_get_single_job_title' ) ) :
 */
 function jobscout_get_single_job_title(){ 
     ?>
-    <header class="entry-header">
-        <h1 class="entry-title"><?php the_title(); ?></h1>
-        <?php
+        <header class="entry-header">
+            <h1 class="entry-title"><?php the_title(); ?></h1>
+            <?php
             if ( get_option( 'job_manager_enable_types' ) ) { 
                 echo '<div class="job-type">';
                     $types = wpjm_get_the_job_types(); 
                     if ( ! empty( $types ) ) : foreach ( $types as $type ) : ?>
-                        <span class="btn <?php echo esc_attr( sanitize_title( $type->slug ) ); ?>"><?php echo esc_html( $type->name ); ?></span>
-                    <?php endforeach; endif;
+            <span
+                class="btn <?php echo esc_attr( sanitize_title( $type->slug ) ); ?>"><?php echo esc_html( $type->name ); ?></span>
+            <?php endforeach; endif;
                 echo '</div>';
             } 
         ?>
-    </header>
-    <?php
+        </header>
+        <?php
 }
 endif;
 add_action( 'jobscout_before_single_job_content', 'jobscout_get_single_job_title' );
@@ -410,17 +420,17 @@ function jobscout_navigation(){
     		'category'
     	); 
         
-        if( $previous || $next ){?>            
-            <nav class="navigation post-navigation" role="navigation">
-    			<h2 class="screen-reader-text"><?php esc_html_e( 'Post Navigation', 'jobscout' ); ?></h2>
-    			<div class="nav-links">
-    				<?php
+        if( $previous || $next ){?>
+        <nav class="navigation post-navigation" role="navigation">
+            <h2 class="screen-reader-text"><?php esc_html_e( 'Post Navigation', 'jobscout' ); ?></h2>
+            <div class="nav-links">
+                <?php
                         if( $previous ) echo $previous;
                         if( $next ) echo $next;
                     ?>
-    			</div>
-    		</nav>        
-            <?php
+            </div>
+        </nav>
+        <?php
         }
     }else{
         the_posts_navigation();
@@ -438,17 +448,17 @@ function jobscout_author(){
     $ed_author    = get_theme_mod( 'ed_author', false );
     $author_title = get_theme_mod( 'author_title', __( 'About Author', 'jobscout' ) );
     if( ! $ed_author && get_the_author_meta( 'description' ) ){ ?>
-    <div class="author-bio">
-        <?php if( $author_title ) echo '<h3 class="title">' . esc_html( $author_title ) . '</h3>'; ?>
-        <div class="author-bio-inner">
-            <figure class="author-img"><?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?></figure>
-            <div class="author-content">
-                <?php echo '<div class="author-info">' . wpautop( wp_kses_post( get_the_author_meta( 'description' ) ) ) . '</div>';
-                ?>		
+        <div class="author-bio">
+            <?php if( $author_title ) echo '<h3 class="title">' . esc_html( $author_title ) . '</h3>'; ?>
+            <div class="author-bio-inner">
+                <figure class="author-img"><?php echo get_avatar( get_the_author_meta( 'ID' ), 100 ); ?></figure>
+                <div class="author-content">
+                    <?php echo '<div class="author-info">' . wpautop( wp_kses_post( get_the_author_meta( 'description' ) ) ) . '</div>';
+                ?>
+                </div>
             </div>
-		</div>
-	</div>
-    <?php
+        </div>
+        <?php
     }
 }
 endif;
@@ -474,10 +484,10 @@ if( ! function_exists( 'jobscout_content_end' ) ) :
 */
 function jobscout_content_end(){ 
     $home_sections = jobscout_get_home_sections(); 
-    if( ! ( is_front_page() && ! is_home() && $home_sections ) ){ ?>            
-        </div><!-- .container/ -->        
-    </div><!-- .error-holder/site-content -->
-    <?php
+    if( ! ( is_front_page() && ! is_home() && $home_sections ) ){ ?>
+    </div><!-- .container/ -->
+</div><!-- .error-holder/site-content -->
+<?php
     }
 }
 endif;
@@ -489,7 +499,7 @@ if( ! function_exists( 'jobscout_footer_start' ) ) :
 */
 function jobscout_footer_start(){
     ?>
-    <footer id="colophon" class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
+<footer id="colophon" class="site-footer" itemscope itemtype="https://schema.org/WPFooter">
     <?php
 }
 endif;
@@ -512,18 +522,123 @@ function jobscout_footer_top(){
     }
                  
     if( $active_sidebars ){ ?>
-        <div class="footer-t">
-    		<div class="container">
-    			<div class="grid column-<?php echo esc_attr( $sidebar_count ); ?>">
-                <?php foreach( $active_sidebars as $active ){ ?>
-    				<div class="col">
-    				   <?php dynamic_sidebar( $active ); ?>	
-    				</div>
-                <?php } ?>
+    <div class="footer-t" style="padding-top: 0px;">
+        <section id="block-7" class="widget widget_block">
+            <div class="wp-block-contact-form-7-contact-form-selector">
+                <div class="wpcf7 no-js" id="wpcf7-f972-o1" lang="en-US" dir="ltr">
+                    <div class="screen-reader-response">
+                        <p role="status" aria-live="polite" aria-atomic="true"></p>
+                        <ul></ul>
+                    </div>
+                    <form action="/cms_nhome/#wpcf7-f972-o1" method="post" class="wpcf7-form init"
+                        aria-label="Contact form" novalidate="novalidate" data-status="init">
+                        <div style="display: none;">
+                            <input type="hidden" name="_wpcf7" value="972" />
+                            <input type="hidden" name="_wpcf7_version" value="5.8.3" />
+                            <input type="hidden" name="_wpcf7_locale" value="en_US" />
+                            <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f972-o1" />
+                            <input type="hidden" name="_wpcf7_container_post" value="0" />
+                            <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+                        </div>
+                        <div class="container-fluid"
+                            style="height: 100px; background-color:#ff6200; text-align: center; justify-content: center;">
+                            <div class="row" style="
+                          display: flex;
+                          justify-content: center;
+                        ">
+                                <div class="col-md-2">
+                                    <p>
+                                    <h4 style="    
+                                           margin-top: 10%;
+                                            margin-left: 23%;
+                                            text-align: left;
+                                            color: white;">
+                                        Subscribe To <br>
+                                        Out Newsletter
+                                    </h4>
+                                    </p>
+                                </div>
+                                <div class="col-md-6" style=" text-align: start;">
+                                    <div class="contact-input" style="padding-top: 25px; position: relative;">
+                                        <p>
+                                            <ul style="
+                                                top: 25;
+                                                position: absolute;
+                                                display: flex;
+                                            ">
+                                                <li style="
+                                                    height: 50;
+                                                    background: white;
+                                                ">
+                                                
+                                            <span class="icon" style="
+                                        
+                                        border: solid 1px white;
+                                        padding-left: 12;
+                                        padding-top: 12;
+                                        top: 48;
+                                        padding-bottom: 11;
+                                    ">
+                                                <svg xmlns="http://www.w3.org/2000/svg" height="20px"
+                                                    viewBox="0 0 512 512">
+                                                    <!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                                    <style>
+                                                    svg {
+                                                        fill: #ff6200
+                                                    }
+                                                    </style>
+                                                    <path
+                                                        d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+                                                </svg>
+                                            </span>
+                                            <span class="wpcf7-form-control-wrap" data-name="email-324">
+                                                <input size="40"
+                                                    class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email contact-email"
+                                                    aria-required="true" aria-invalid="false"
+                                                    placeholder="Input your email address" value="" type="email"
+                                                    name="email-324" style="
+                                                border: solid 1px white;
+                                                border-radius: 0;
+                                                padding: 11;
+                                                margin-left: 0;
+                                                width: 410;
+                        
+                                                " />
+                                            </span>
+                                                </li>
+                                                <li>
+                                                <input class="wpcf7-form-control wpcf7-submit has-spinner contact-sub"
+                                                type="submit" value="SUBCRIBE" style="
+                                                    border: solid 1px white;
+                                                    border-radius: 0;
+                                                    margin-left: 10;
+                                                    color: white;
+                                                    font-size: 20;
+                                                    background: #ff6200;
+                                                    padding-left: 23px;
+                                                    padding-top: 9px;
+                                                    padding-right: 23px;
+                                                    padding-bottom: 10px;
+                                        " />
+                                                </li>
+                                            </ul>
+                                         
+
+                                        </p>
+                                        <div class="wpcf7-response-output" aria-hidden="true"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
                 </div>
-    		</div>
-    	</div>
-        <?php 
+                </form>
+            </div>
+        </section>
+    </div>
+    <?php 
     }
 }
 endif;
@@ -535,19 +650,19 @@ if( ! function_exists( 'jobscout_footer_bottom' ) ) :
 */
 function jobscout_footer_bottom(){ ?>
     <div class="footer-b">
-		<div class="container">
+        <div class="container">
             <?php 
                 if ( function_exists( 'the_privacy_policy_link' )  )  the_privacy_policy_link( '<div class="privacy-block">', '</div>' );
             ?>
-			<div class="copyright">            
-            <?php
+            <div class="copyright">
+                <?php
                 jobscout_get_footer_copyright();
                 jobscout_ed_author_link();
                 jobscout_ed_wp_link();
-            ?>               
+            ?>
             </div>
-		</div>
-	</div>
+        </div>
+    </div>
     <?php
 }
 endif;
@@ -558,8 +673,8 @@ if( ! function_exists( 'jobscout_footer_end' ) ) :
  * Footer End 
 */
 function jobscout_footer_end(){ ?>
-    </footer><!-- #colophon -->
-    <?php
+</footer><!-- #colophon -->
+<?php
 }
 endif;
 add_action( 'jobscout_footer', 'jobscout_footer_end', 50 );
@@ -569,9 +684,9 @@ if( ! function_exists( 'jobscout_page_end' ) ) :
  * Page End
 */
 function jobscout_page_end(){ ?>
-    </div><!-- #acc-content -->
-    </div><!-- #page -->
-    <?php
+</div><!-- #acc-content -->
+</div><!-- #page -->
+<?php
 }
 endif;
 add_action( 'jobscout_after_footer', 'jobscout_page_end', 20 );

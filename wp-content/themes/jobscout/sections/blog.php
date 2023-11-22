@@ -1,3 +1,15 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+</script>
+
+<style>
+    .img {
+      width: 220;
+      height: 220px;
+    }
+</style>
 <?php
 /**
  * Blog Section
@@ -16,63 +28,85 @@ $ed_blog      = get_theme_mod( 'ed_blog', true );
 $args = array(
     'post_type'           => 'post',
     'post_status'         => 'publish',
-    'posts_per_page'      => 3,
+    'posts_per_page'      => 4,
     'ignore_sticky_posts' => true
 );
+?>
+     <div class="container fluid">
+    <div class="row" style="
+        display: flex;
+    justify-content: center;
+    ">
+        <h1 style="   
+     padding-top: 50;
+    padding-bottom: 30;
+    text-align: center;
+    ">
+    NEWEST BLOG ENTRIES</h1>
+<?php
+$latest_posts = new WP_Query($args);
 
-$qry = new WP_Query( $args );
-
-if( $ed_blog && ( $blog_heading || $sub_title || $qry->have_posts() ) ){ ?>
-<section id="blog-section" class="article-section">
-	<div class="container">
-        <?php 
-            if( $blog_heading ) echo '<h2 class="section-title">' . esc_html( $blog_heading ) . '</h2>';
-            if( $sub_title ) echo '<div class="section-desc">' . wpautop( wp_kses_post( $sub_title ) ) . '</div>'; 
+if ($latest_posts->have_posts()) :
+    while ($latest_posts->have_posts()) :
+        $latest_posts->the_post();
         ?>
-        
-        <?php if( $qry->have_posts() ){ ?>
-           <div class="article-wrap">
-    			<?php 
-                while( $qry->have_posts() ){
-                    $qry->the_post(); ?>
-                    <article class="post">
-        				<figure class="post-thumbnail">
-                            <a href="<?php the_permalink(); ?>" class="post-thumbnail">
-                            <?php 
-                                if( has_post_thumbnail() ){
-                                    the_post_thumbnail( 'jobscout-blog', array( 'itemprop' => 'image' ) );
-                                }else{ 
-                                    jobscout_fallback_svg_image( 'jobscout-blog' ); 
-                                }                            
-                            ?>                        
-                            </a>
-                        </figure>
-                        <header class="entry-header">
-                            <div class="entry-meta">
-                                <?php 
-                                    if( ! $hide_author ) jobscout_posted_by(); 
-                                    if( ! $hide_date ) jobscout_posted_on();
-                                ?> 
-                            </div>
-                            <h3 class="entry-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                            </h3>
-                        </header>
-        			</article>			
-        			<?php 
-                }
-                wp_reset_postdata();
-                ?>
-    		</div><!-- .article-wrap -->
-    		
-            <?php if( $blog && $label ){ ?>
-                <div class="btn-wrap">
-        			<a href="<?php the_permalink( $blog ); ?>" class="btn"><?php echo esc_html( $label ); ?></a>
-        		</div>
-            <?php } ?>
-        
-        <?php } ?>
-	</div>
-</section>
-<?php 
-}
+   
+
+        <div class="col-md-6" style="
+                background: aliceblue;
+               margin: 30px;
+                width: 515;
+                height: 250;
+        ">
+            <a href="<?php the_permalink(); ?>?>"
+            style="text-decoration: none; color: black;"
+            >
+            <ul style="
+              margin-left: 10px;
+                padding: 0px;
+                list-style: none;
+                text-decoration: none;
+                display: flex;
+                margin-top: 15;
+            ">
+                <li class="img" style=" padding-top: 13%;">
+                 <?php the_post_thumbnail();?>
+                </li>
+                <li style="padding: 10px;">
+                    <div class="blog" style="
+                        padding-top: 6%;
+                    ">
+                        <div class="title">
+                            <h5>
+                                <?php
+                             the_title();
+                             ?>
+                            </h5>
+                        </div>
+                        <div class="content" style="    
+                        font-size: 13;">
+                            <p><?php
+                              echo mb_substr( get_the_excerpt(),0,100);
+                             ?>
+                            </p>
+                        </div>
+                        <h5>
+                            <a href="<?php the_permalink(); ?>?>" style="text-decoration: none;
+                                    font-size: 15px;
+                                    color: #ff6d00;">Read more</a>
+                        </h5>
+                    </div>
+                </li>
+            </ul>
+            </a>
+        </div>
+
+        <?php
+    endwhile;
+    wp_reset_postdata();
+else :
+    echo 'Không có bài viết nào.';
+endif;
+?>
+    </div>
+</div>
