@@ -13,7 +13,7 @@
          * @hooked jobscout_post_thumbnail - 10
         */
         do_action( 'jobscout_before_post_entry_content' );
-
+        
         echo '<div class="content-wrap">';
         /**
          * @hooked jobscout_entry_header  - 10 
