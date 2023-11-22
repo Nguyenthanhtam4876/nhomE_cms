@@ -2340,7 +2340,7 @@ SITE BANNER SECTION
 }
 
 .banner-caption .title {
-  margin: 0;
+  margin-left: -200px;
   font-size: 2.5em;
   color: #fff;
   font-weight: 800;
@@ -2375,9 +2375,6 @@ SITE BANNER SECTION
 .banner-caption .jobscout_job_filters .search_jobs {
   padding: 0;
   display: flex;
-  flex: 1;
-  flex-wrap: wrap;
-  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -2391,6 +2388,7 @@ SITE BANNER SECTION
   display: flex;
   flex: 1;
   padding-left: 0;
+  
 }
 
 .banner-caption .jobscout_job_filters .search_jobs div.filter_wide,
@@ -2438,6 +2436,8 @@ SITE BANNER SECTION
 }
 
 .banner-caption .jobscout_job_filters .search_jobs>div:first-child input {
+  width: 400px;
+  margin-right: 10px;
   border-left: none;
 }
 
