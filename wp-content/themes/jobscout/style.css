@@ -3432,6 +3432,7 @@ SINGLE PAGE
 }
 
 .page .site-main article .entry-title {
+  text-align: center;
   margin-top: 0;
 }
 

@@ -291,7 +291,7 @@ if( ! function_exists( 'jobscout_entry_content' ) ) :
 */
 function jobscout_entry_content(){ 
     $ed_excerpt = get_theme_mod( 'ed_excerpt', true ); ?>
-    <div class="entry-content" itemprop="text">
+    <div class="entry-content row" itemprop="text">
 		<?php
 			if( is_singular() || ! $ed_excerpt || ( get_post_format() != false ) ){
                 the_content();    
