@@ -676,8 +676,7 @@ function jobscout_footer_bottom(){ ?>
             <div class="copyright">
                 <?php
                 jobscout_get_footer_copyright();
-                jobscout_ed_author_link();
-                jobscout_ed_wp_link();
+            
             ?>              
             </div>
         </div>
