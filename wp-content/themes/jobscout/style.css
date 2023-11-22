@@ -64,6 +64,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   --white-color: #fff;
   --white-color-rgb: 255, 255, 255;
   --primary-font: "Nunito Sans", sans-serif;
+  --little-gray:#F2F2F2;
 }
 
 html {
@@ -1199,6 +1200,7 @@ figure.post-thumbnail {
 }
 
 .entry-meta>span a {
+  text-decoration: none;
   color: rgba(0, 0, 0, 0.6);
 }
 
@@ -2569,10 +2571,9 @@ section.top-job-section .section-title {
 }
 
 .top-job-section .row div.job_listings article {
-  width: 48%;
   background: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-right: 2.5%;
+  margin-right: 2%;
   margin-bottom: 3%;
   border-radius: 5px;
   padding: 30px;
@@ -2627,22 +2628,28 @@ section.top-job-section .section-title {
 }
 
 .top-job-section .row div.job_listings article .company-name {
-  font-size: 0.8888em;
-  color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
   line-height: 1.44em;
   margin-top: 5px;
 }
 
-.top-job-section .row div.job_listings article .company-name::before {
-  content: "@";
-}
-
 .top-job-section .row div.job_listings article .entry-meta {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   margin-top: 15px;
-  padding-top: 15px;
   font-size: 1em;
+  display: flex;
+  background: var(--little-gray);
+  border-radius: 25px;
+  text-align: center;
+  align-items: center;
+}
+.top-job-section .row div.job_listings article .entry-meta > *{
+  padding: 5px;
+  margin: 0;
+  border-right: lightgray 1px solid;
+}
+.top-job-section .row div.job_listings article .entry-meta .company-address {
+  border: none;
 }
 
 .top-job-section .row div.job_listings article .salary-amt,
@@ -3425,6 +3432,7 @@ SINGLE PAGE
 }
 
 .page .site-main article .entry-title {
+  text-align: center;
   margin-top: 0;
 }
 
@@ -5602,27 +5610,38 @@ JOB LISTING PAGE
   line-height: 1.45em;
 }
 
+.entry-title a {
+  text-decoration: none;
+}
+
 .site-main .entry-content div.job_listings div.job_listings article .company-name {
-  font-size: 0.8888em;
-  color: rgba(0, 0, 0, 0.5);
   font-weight: 400;
   line-height: 1.44em;
   margin-top: 5px;
 }
 
-.site-main .entry-content div.job_listings div.job_listings article .company-name:before {
-  content: "@";
-}
-
 .site-main .entry-content div.job_listings div.job_listings article .entry-meta {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 15px;
-  padding-top: 15px;
+  border-radius: 25px;
+  background: var(--little-gray);
+  text-align: center;
+  padding: 5px;
   font-size: 1em;
   display: flex;
   flex: 1;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
+}
+.site-main .entry-content div.job_listings div.job_listings article .entry-meta > *{
+  width: 30%;
+  padding: 5px;
+  border-right: #000 1px solid;
+  margin: 0 !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.site-main .entry-content div.job_listings div.job_listings article .entry-meta .company-address{
+  border: none;
 }
 
 .site-main .entry-content div.job_listings div.job_listings article .entry-meta .salary-amt,
